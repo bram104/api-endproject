@@ -1,26 +1,37 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float
 from sqlalchemy.orm import relationship
 
 from database import Base
 
 
-class User(Base):
-    __tablename__ = "users"
+class players(Base):
+    __tablename__ = "players"
 
-    id = Column(Integer, primary_key=True, index=True)
+    playerId = Column(Integer, primary_key=True, index=True)
+    name = Column(String, unique=True, index=True)
+    height = Column(Float, default=True)
+    date_of_birth = Column(String)
     email = Column(String, unique=True, index=True)
-    hashed_password = Column(String)
-    is_active = Column(Boolean, default=True)
-
-    items = relationship("Item", back_populates="owner")
+    password = Column(String, index=True)
 
 
-class Item(Base):
-    __tablename__ = "items"
 
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-    description = Column(String, index=True)
-    owner_id = Column(Integer, ForeignKey("users.id"))
+class country(Base):
+    __tablename__ = "country"
 
-    owner = relationship("User", back_populates="items")
+    countryId = Column(Integer, primary_key=True, index=True)
+    country_name = Column(String, index=True)
+    continent = Column(String)
+
+
+
+class club(Base):
+    __tablename__ = "club"
+
+    clubId = Column(Integer, primary_key=True, index=True)
+    club_name = Column(String, index=True)
+    club_value = Column(String)
+
+
+
+
