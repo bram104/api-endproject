@@ -65,15 +65,11 @@ Doormiddel van de Club_Value kunnen we de informatie ophalen uit de tabel Clubs.
 
 ### Put Request
 
-####**Put Request**
-
 Met deze put request gaan we onze data van de tabel players veranderen die we bij de post hebben ingevoerd.
 
 ![image](https://user-images.githubusercontent.com/79090832/211408352-5730e385-de16-4edb-940b-a27ec8338ea4.png)
 
 ### Delete Request
-
-#### **Delete Request**
 
 Met onze Delete Request kunnen we data verwijderen uit de tabel van Clubs.
 
